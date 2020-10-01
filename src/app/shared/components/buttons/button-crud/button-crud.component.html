@@ -1,0 +1,69 @@
+<div fxLayout="row" fxLayoutGap="15px">
+  <button
+    mat-raised-button
+    type="submit"
+    color="warn"
+  >
+    <mat-icon>done_all</mat-icon>
+    <span>Salvar</span>
+  </button>
+
+  <button
+    mat-raised-button
+    type="submit"
+    color="warn"
+  >
+    <mat-icon>delete_forever</mat-icon>
+    <span>Confirmar</span>
+  </button>
+
+  <button
+    mat-raised-button
+    type="button"
+    color="primary"
+    (click)="editClicked()"
+  >
+    <mat-icon>edit</mat-icon>
+    <span>Editar</span>
+  </button>
+
+  <button
+    mat-raised-button
+    type="button"
+    color="primary"
+    (click)="viewClicked()"
+  >
+    <mat-icon>visibility</mat-icon>
+    <span>Visualizar</span>
+  </button>
+
+  <button
+    mat-raised-button
+    type="button"
+    color="warn"
+    (click)="deleteClicked()"
+  >
+    <mat-icon>delete_outline</mat-icon>
+    <span>Excluir</span>
+  </button>
+
+  <button
+    mat-raised-button
+    type="button"
+    color="primary"
+    (click)="newClicked()"
+  >
+    <mat-icon>add_box</mat-icon>
+    <span>Novo</span>
+  </button>
+
+  <button
+    mat-raised-button
+    type="button"
+    color="accent"
+    (click)="backClicked()"
+  >
+    <mat-icon>reply</mat-icon>
+    <span>Voltar</span>
+  </button>
+</div>

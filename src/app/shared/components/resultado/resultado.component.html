@@ -1,0 +1,58 @@
+<div class="paginator-container">
+  <div class="loading" *ngIf="isLoadingResults">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-template #semDados>
+    <p class="alerta-consulta-vazia">Não há resultados da consulta...</p>
+  </ng-template>
+
+  <div
+    gdColumns="1fr"
+    gdGap="10px"
+    *ngIf="result?.length > 0 || isLoadingResults; else semDados"
+  >
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      [matSortActive]="sortId"
+      matSortDisableClear
+      [matSortDirection]="sortDirection"
+      (matSortChange)="onSortChanged($event)"
+    >
+      <ng-container
+        [matColumnDef]="column.campo"
+        *ngFor="let column of tableConfig"
+      >
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [disabled]="!!column.sortDisabled"
+          [class]="column.class"
+        >
+          {{ column.titulo }}
+        </th>
+
+        <td mat-cell *matCellDef="let row" [class]="column.class">
+          <span>
+            {{ getCampo(column.campo, row) }}
+          </span>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      *ngIf="isPaginated"
+      showFirstLastButtons
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="onPageChanged($event)"
+    ></mat-paginator>
+  </div>
+</div>

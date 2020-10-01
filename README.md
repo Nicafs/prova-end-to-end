@@ -1,27 +1,19 @@
-# ProvaEndToEnd
+# Prova End-to-End Analytics
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+Este é um sistema para um teste de capacidade.
 
-## Development server
+## Rodando a Aplicação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute o comando ng serve --open no cmd do windows ( ou semelhante no linux ) dentro da pasta da aplicação para abrir automáticamente o sistema.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para construir a aplicação e subir em produção, basta rodar o comando ng build --prod. A aplicação será construida no diretório 'dist'.
 
-## Running unit tests
+## Rodar testes unitários
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para rodar o teste unitário da aplicação, rode o comando 'ng teste'
 
-## Running end-to-end tests
+O comandon ng test executa testes unitários via Karma.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Testes foram adicionados na nova branch, devido ter extrapolado o tempo pedido no dia.

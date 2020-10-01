@@ -1,0 +1,58 @@
+<div class="animated fadeInLeft fast">
+    <h3>{{ title }}</h3>
+  
+    <form
+      [formGroup]="companyCrudForm"
+      #form="ngForm"
+      (ngSubmit)="onSubmit(form)"
+      gdColumns="1fr"
+      gdGap="10px"
+    >
+      <mat-expansion-panel #matPanel1 class="borderTopPrimary" expanded>
+        <mat-expansion-panel-header class="prevent-click">
+          <mat-panel-title> Dados do Banco</mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <mat-divider [fxHide]="!matPanel1.expanded"></mat-divider>
+  
+        <div gdColumns="400px 400px" gdColumns.lt-md="1fr" gdGap="10px">
+          <mat-form-field>
+            <mat-label>Número</mat-label>
+            <input
+              matInput
+              placeholder="Número"
+              formControlName="numero"
+              required
+            />
+  
+            <mat-error *ngIf="fControls.numero.hasError('required')">
+              <span>Não Informado</span>
+            </mat-error>
+  
+            <mat-error *ngIf="fControls.numero.hasError('maxlength')">
+              <span>O tamanho não pode ser maior que 10 letras!</span>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field gdColumn.gt-sm="span 2">
+            <mat-label>Descrição</mat-label>
+            <input
+              matInput
+              placeholder="Descrição"
+              formControlName="descricao"
+              required
+            />
+  
+            <mat-error *ngIf="fControls.descricao.hasError('required')">
+              <span>Não Informado</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+  
+      <app-button-crud
+        [path]="path"
+      ></app-button-crud>
+    </form>
+  </div>
+  

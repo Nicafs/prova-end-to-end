@@ -1,0 +1,46 @@
+<div gdGap="10px">
+    <custom-card-consult
+      [formGroup]="companyForm"
+      pageTitle="Consulta de Empresas"
+      (handleSubmit)="
+        search({
+          filters: companyForm.value,
+          pageIndex: 0,
+          pageSize: pageSize,
+          active: sortId,
+          direction: sortDirection
+        });
+        table.open()
+      "
+    >
+      <mat-form-field>
+        <mat-label>Nome do Banco</mat-label>
+        <input matInput placeholder="Nome do Banco" formControlName="nome" />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Número</mat-label>
+        <input
+          matInput
+          placeholder="Número"
+          formControlName="numero"
+          maxlength="6"
+        />
+      </mat-form-field>
+    </custom-card-consult>
+  
+    <custom-card cardTitle="Resultado da Consulta" #table>
+      <!-- TODO: Recebe os parametros adicionas e realiza a contulta -->
+      <app-resultado
+        (handlePageChanged)="search($event)"
+        (handleSortChanged)="search($event)"
+        [result]="result | async"
+        [length]="length"
+        [tableConfig]="tableConfig"
+        [sortId]="sortId"
+        [sortDirection]="sortDirection"
+        [isLoadingResults]="isLoadingResults"
+        [filters]="companyForm.value"
+      ></app-resultado>
+    </custom-card>
+  </div>

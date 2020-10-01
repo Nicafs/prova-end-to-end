@@ -1,0 +1,116 @@
+{
+  "env": {
+      "es2020": true,
+      "node": true,
+      "browser": true
+  },
+  "extends": [
+      "airbnb-base",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+  },
+  "ignorePatterns": [
+    "**/coverage",
+    "**/dist",
+    "**/node_modules",
+    "**/*.config.js"
+  ],
+  "plugins": [
+      "@typescript-eslint",
+      "prettier"
+  ],
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ],
+    "prettier/prettier": "error",
+    "no-console": "warn",
+    "no-irregular-whitespace":"error",
+    "no-dupe-else-if": "error",
+    "no-dupe-keys": "error",
+    "no-unreachable": "error",
+    "no-empty": "warn",
+    "no-unused-vars": "error",
+    "no-duplicate-case": "error",
+    "no-duplicate-imports": "error",
+    "accessor-pairs": "error",
+    "default-case": "error",
+    "camelcase": "warn",
+    "class-methods-use-this" : "off",
+    "no-useless-constructor": "off",
+    "import/prefer-default-export" : "off",
+    "id-blacklist": [
+      "error",
+      "any",
+      "Number",
+      "number",
+      "String",
+      "string",
+      "Boolean",
+      "boolean",
+      "Undefined",
+      "undefined"
+    ],
+    "id-match": "error",
+
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "array-callback-return": "off"
+
+    // "@typescript-eslint/tslint/config": [
+    //   "error",
+    //   {
+    //     "rules": {
+    //       "component-class-suffix": true,
+    //       "component-selector": [
+    //           true,
+    //           "element",
+    //           "app",
+    //           "kebab-case"
+    //       ],
+    //       "contextual-lifecycle": true,
+    //       "directive-class-suffix": true,
+    //       "directive-selector": [
+    //           true,
+    //           "attribute",
+    //           "app",
+    //           "camelCase"
+    //       ],
+    //       "jsdoc-format": [
+    //           true,
+    //           "check-multiline-start"
+    //       ],
+    //       "no-conflicting-lifecycle": true,
+    //       "no-host-metadata-property": true,
+    //       "no-input-rename": true,
+    //       "no-inputs-metadata-property": true,
+    //       "no-output-native": true,
+    //       "no-output-on-prefix": true,
+    //       "no-output-rename": true,
+    //       "no-outputs-metadata-property": true,
+    //       "no-reference-import": true,
+    //       "prefer-conditional-expression": true,
+    //       "prettier": true,
+    //       "template-banana-in-box": true,
+    //       "template-no-negated-async": true,
+    //       "use-lifecycle-interface": true,
+    //       "use-pipe-transform-interface": true
+    //     }
+    //   }
+    // ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
